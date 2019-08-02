@@ -1,0 +1,16 @@
+version: '3'
+services:
+  micronautdb:
+    image: postgres
+    environment:
+      - POSTGRES_USER=micronaut
+      - POSTGRES_PASSWORD=rememberthecant
+      - POSTGRES_DB=micronaut
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+
+volumes:
+  db-data:
+    driver: local

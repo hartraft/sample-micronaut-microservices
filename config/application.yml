@@ -21,3 +21,18 @@ tracing:
       url: http://192.168.99.100:9411
     sampler:
       probability: 1
+datasources:
+  default:
+    url: jdbc:postgresql://localhost:5432/micronaut?ssl=false
+    username: micronaut
+    password: rememberthecant
+    driverClassName: org.postgresql.Driver
+jpa:
+  default:
+    packages-to-scan:
+      - 'pl.piomin.services.department.model'
+    properties:
+      hibernate:
+        hbm2ddl:
+          auto: update
+        show_sql: true
